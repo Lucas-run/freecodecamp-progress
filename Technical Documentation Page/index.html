@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>TypeScript</header>
+        <ul>
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#Devo_aprender_JavaScript_ou_TypeScript?" class="nav-link">Devo aprender JavaScript ou TypeScript?</a></li>
+            <li><a href="#Tipos_Utilitarios" class="nav-link">Tipos Utilitarios</a></li>
+            <li><a href="#Mais_tipos" class="nav-link">Mais tipos</a></li>
+            <li><a href="#Outros_tipos" class="nav-link">Outros tipos</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc" lang="pt-br">
+        <section class="main-section" id="Introduction" >
+            <header>Introduction</header>
+            <article>
+                <p>Você provavelmente já ouviu falar que TypeScript é uma variante do JavaScript. A relação entre TypeScript (TS) e JavaScript (JS) é bastante única entre as linguagens de programação modernas, então aprender mais sobre essa relação o ajudará a entender como o TypeScript contribui para o JavaScript.</p>
+                <h1>JavaScript</h1>
+                <p>JavaScript (também conhecido como ECMAScript) começou sua vida como uma linguagem de script simples para navegadores. Na época de sua invenção, era esperado que fosse usado para pequenos trechos de código incorporados em uma página web — escrever mais do que algumas dezenas de linhas de código seria algo incomum. Devido a isso, os primeiros navegadores da web executavam esse tipo de código de forma bastante lenta. Com o tempo, porém, o JS se tornou cada vez mais popular, e os desenvolvedores web começaram a usá-lo para criar experiências interativas.</p>
+                <p>Os desenvolvedores de navegadores da web responderam a esse aumento no uso do JS otimizando seus mecanismos de execução (compilação dinâmica) e expandindo o que poderia ser feito com ele (adicionando APIs), o que por sua vez fez com que os desenvolvedores web o usassem ainda mais. Em sites modernos, seu navegador está frequentemente executando aplicativos que abrangem centenas de milhares de linhas de código. Este é o crescimento longo e gradual da "web", começando como uma simples rede de páginas estáticas e evoluindo para uma plataforma para aplicativos ricos de todos os tipos.</p>
+                <p>Além disso, o JS se tornou popular o suficiente para ser usado fora do contexto dos navegadores, como implementar servidores JS usando node.js. A natureza "execute em qualquer lugar" do JS o torna uma escolha atraente para desenvolvimento multiplataforma. Hoje em dia, existem muitos desenvolvedores que usam apenas JavaScript para programar toda a sua Stack!</p>
+                <p>Para resumir, temos uma linguagem que foi projetada para usos rápidos e depois se tornou uma ferramenta completa para escrever aplicativos com milhões de linhas. Cada linguagem tem suas próprias peculiaridades — estranhezas e surpresas, e o início humilde do JavaScript faz com que ele tenha muitas dessas. Alguns exemplos:</p>
+                <ul>
+                    <li>O operador de igualdade do JavaScript (==) realiza coerção em seus operandos, o que pode levar a comportamentos inesperados:</li>
+                    <code>
+                        if ("" == 0) {
+                            // It is! But why??
+                          }
+                          if (1 < x < 3) {
+                            // True for *any* value of x!
+                          }
+                    </code>
+                    <li>JavaScript também permite acessar propriedades que não estão explícitas:</li>
+                    <code>
+                        const obj = { width: 10, height: 15 };
+                        // Why is this NaN? Spelling is hard!
+                        const area = obj.width * obj.heigth;
+                    </code>
+                </ul>
+                <p>A maioria das linguagens de programação lançaria um erro quando esses tipos de erros ocorressem, algumas o fariam durante a compilação — antes da execução de qualquer código. Ao escrever pequenos programas, essas peculiaridades são irritantes, mas gerenciáveis; ao escrever aplicativos com centenas ou milhares de linhas de código, essas surpresas constantes são um problema sério.</p>
+                <h1>TypeScript</h1>
+                <p>Nós dissemos anteriormente que algumas linguagens não permitiriam que esses programas com erros fossem executados de forma alguma. Detectar erros em código sem executá-lo é conhecido como verificação estática. Determinar o que é um erro e o que não é com base nos tipos de valores que estão sendo operados é conhecido como verificação estática de tipos.</p>
+                <p>TypeScript verifica um programa para detectar erros antes da execução e o faz com base nos tipos de valores, o que o torna um verificador estático de tipos. TypeScript é um superconjunto do JavaScript: a sintaxe JS é, portanto, válida em TS. TypeScript não considera nenhum código JavaScript como um erro devido à sua sintaxe. Isso significa que você pode pegar qualquer código JavaScript funcional e colocá-lo em um arquivo TypeScript sem se preocupar com a forma exata como está escrito.</p>
+                <p>No entanto, TypeScript é um superconjunto tipado, o que significa que ele adiciona regras sobre como diferentes tipos de valores podem ser usados. Se você mover algum código de um arquivo JavaScript para um arquivo TypeScript, você pode ver erros de tipo dependendo de como o código é escrito. Esses podem ser problemas legítimos com o código ou o TypeScript sendo excessivamente conservador.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Devo_aprender_JavaScript_ou_TypeScript?">
+            <header>
+                Devo aprender JavaScript ou TypeScript?
+            </header>
+            <p>TypeScript é uma linguagem de programação que preserva o comportamento em tempo de execução do JavaScript. Por exemplo, dividir por zero em JavaScript produz Infinity em vez de lançar uma exceção em tempo de execução. Como princípio, TypeScript nunca altera o comportamento em tempo de execução do código JavaScript.</p>
+            <p>Isso significa que, se você mover código de JavaScript para TypeScript, é garantido que ele será executado da mesma maneira, mesmo que TypeScript pense que o código tenha erros de tipo.</p>
+            <p>Manter o mesmo comportamento em tempo de execução que o JavaScript é uma promessa fundamental do TypeScript porque significa que você pode facilmente fazer a transição entre as duas linguagens sem se preocupar com diferenças sutis que possam fazer seu programa parar de funcionar.</p>
+            <p>Em relação aos tipos, grosso modo, uma vez que o compilador do TypeScript terminar de verificar seu código, ele apaga os tipos para produzir o código "compilado" resultante. Isso significa que, uma vez que seu código é compilado, o código JS simples resultante não possui informações de tipo.</p>
+            <p>Isso também significa que TypeScript nunca altera o comportamento do seu programa com base nos tipos que ele inferiu. A linha de fundo é que, embora você possa ver erros de tipo durante a compilação, o sistema de tipos em si não tem influência sobre como seu programa funciona quando é executado.</p>
+            <p>Finalmente, TypeScript não fornece nenhuma biblioteca de tempo de execução adicional. Seus programas usarão a mesma biblioteca padrão (ou bibliotecas externas) que os programas JavaScript, portanto, não há nenhum framework específico do TypeScript para aprender.</p>
+            <p>Então, afinal qual a resposta a pergunta "Devo aprender JavaScript ou TypeScript?"</p>
+            <p>A resposta é que você não pode aprender TypeScript sem aprender JavaScript! TypeScript compartilha sintaxe e comportamento em tempo de execução com JavaScript, portanto, tudo o que você aprender sobre JavaScript está ajudando você a aprender TypeScript ao mesmo tempo.</p>
+            <p>Existem muitos, muitos recursos disponíveis para programadores aprenderem JavaScript; você não deve ignorar esses recursos se estiver escrevendo TypeScript. Por exemplo, há cerca de 20 vezes mais perguntas no StackOverflow com a tag javascript do que typescript, mas todas as perguntas sobre javascript também se aplicam a TypeScript</p>
+            <p>Se você se encontrar procurando algo como "como ordenar uma lista em TypeScript", lembre-se: TypeScript é o tempo de execução do JavaScript com um verificador estático de tipos. A maneira como você ordena uma lista em TypeScript é a mesma maneira que você faz em JavaScript. Se você encontrar um recurso que usa TypeScript diretamente, isso também é ótimo, mas não se limite a pensar que você precisa de respostas específicas do TypeScript para perguntas cotidianas sobre como realizar tarefas em tempo de execução.</p>
+        </section>
+        <section class="main-section" id="Tipos_Utilitarios">
+            <header>Tipos Utilitarios</header>
+            <p>TypeScript provém vários tipos utilitários para facilitar transformações de tipo comum. Esses utilitários estão disponíveis globalmente.</p>
+            <ul>
+                <li>Partial&lt;Type&gt;</li>
+                <p>Constrói um tipo com todas as propriedades de Type definidas como opcionais. Esse utilitário irá retornar um tipo que representa todos os subconjuntos de um determinado tipo.<br/><span>Exemplo: </span></p>
+                <code>
+                    interface Todo {
+                        titulo: string;
+                        descricao: string;
+                      }
+                       
+                      function atualizaTodo(todo: Todo, camposParaAtualizar: Partial&lt;Todo&gt;) {
+                        return { ...todo, ...camposParaAtualizar };
+                      }
+                       
+                      const todo1 = {
+                        titulo: "organizar a mesa",
+                        descricao: "limpar bagunça",
+                      };
+                       
+                      const todo2 = atualizaTodo(todo1, {
+                        descricao: "tirar o lixo",
+                      });
+                </code>
+                <li>Readonly&lt;Type&gt;</li>
+                <p>Constrói um tipo com todas as propriedades de Type definidas como readonly, significando que as propriedades do tipo construído não podem ser reatribuídas.<br/><span>Exemplo: </span></p>
+                <code>
+                    interface Todo {
+                        titulo: string;
+                      }
+                       
+                      const todo: Readonly&lt;Todo&gt; = {
+                        titulo: "Deleta usuários inativos",
+                      };
+                       
+                      todo.titulo = "Olá";
+                </code>
+                <li>Record&lt;Keys,Type&gt;</li>
+                <p>Constrói um tipo com um conjunto de propriedades Keys do tipo Type. Esse utilitário pode ser usado para mapear as propriedades de um tipo para outro tipo.<br/><span>Exemplo: </span></p>
+                <code>
+                    interface InfoPagina {
+                        titulo: string;
+                      }
+                       
+                      type Pagina = "inicio" | "sobre" | "contato";
+                       
+                      const nav: Record&lt;Pagina, InfoPagina&gt; = {
+                        sobre: { titulo: "sobre" },
+                        contato: { titulo: "contato" },
+                        inicio: { titulo: "inicio" },
+                      };
+                       
+                      nav.sobre;
+                </code>
+                <li>Pick&lt;Type, Keys&gt;</li>
+                <p>Constrói um tipo pegando um conjunto de propriedades Keys de Type.<br/><span>Exemplo: </span></p>
+                <code>
+                    interface Todo {
+                        titulo: string;
+                        descricao: string;
+                        completado: boolean;
+                      }
+                       
+                      type TodoPreVisualizacao = Pick&lt;Todo, "titulo" | "completado"&gt;;
+                       
+                      const todo: TodoPreVisualizacao = {
+                        titulo: "Limpar quarto",
+                        completado: false,
+                      };
+                       
+                      todo;
+                </code>
+                <li>Omit&lt;Type, Keys&gt;</li>
+                <p>Constrói um tipo pegando todas as propriedades de Type e então removendo Keys.<br><span>Exemplo:</span></p>
+                <code>
+                    interface Todo {
+                        titulo: string;
+                        descricao: string;
+                        completado: boolean;
+                      }
+                       
+                      type TodoPreVisualizacao = Omit&lt;Todo, "descricao"&gt;;
+                       
+                      const todo: TodoPreVisualizacao = {
+                        titulo: "Limpar quarto",
+                        completado: false,
+                      };
+                       
+                      todo;
+                </code>
+
+                <li>Exclude&lt;Type, ExcludedUnion&gt;</li>
+                <p>Constrói um tipo excluindo de Type todos membros de união que são atribuíveis a ExcludedUnion.<br><span>Exemplo</span></p>
+                <code>
+                    type T0 = Exclude&lt;"a" | "b" | "c", "a"&gt;;
+                    //type T0 = "b" | "c"
+                    type T1 = Exclude&lt;"a" | "b" | "c", "a" | "b"&gt;;    
+                    //type T1 = "c"
+                    type T2 = Exclude&lt;string | number | (() => void), Function&gt;;    
+                    //type T2 = string | number
+                </code>
+
+                <li>Extract&lt;Type, Union&gt;</li>
+                <p>Constrói um tipo extraindo de Type todos membros de união que são atribuíveis a Union.<br><span>Exemplo</span></p>
+                <code>
+                    type T0 = Extract&lt;"a" | "b" | "c", "a" | "f"&gt;;
+                    //type T0 = "a"
+                    type T1 = Extract&lt;string | number | (() => void), Function&gt;;  
+                    //type T1 = () => void
+                </code>
+
+                <li>NonNullable&lt;Type&gt;</li>
+                <p>Constrói um tipo por excluir null e undefined de Type.<br><span>Exemplo</span></p>
+                <code>
+                    type T0 = NonNullable&lt;string | number | undefined&gt;;
+                    //type T0 = string | number
+                    type T1 = NonNullable&lt;string[] | null | undefined&gt;       
+                    //type T1 = string[]
+                </code>
+
+                <li>Parameters&lt;Type&gt;</li>
+                <p>Constrói uma tipo tupla a partir de tipos usados nos parâmetros de uma função tipo Type.<br><span>Exemplo</span></p>
+                <code>
+                    declare function f1(arg: { a: number; b: string }): void;
+                    
+                    type T0 = Parameters&lt;() => string&gt;;    
+                    //type T0 = []
+                    type T1 = Parameters&lt;(s: string) => void&gt;; 
+                    //type T1 = [s: string]
+                    type T2 = Parameters&lt;&lt;T>(arg: T) => T&gt;;  
+                    //type T2 = [arg: unknown]
+                    type T3 = Parameters&lt;typeof f1&gt;;   
+                    /*type T3 = [arg: {
+                        a: number;
+                        b: string;
+                    }]*/
+                    type T4 = Parameters&lt;any&gt;;   
+                    //type T4 = unknown[]
+                    type T5 = Parameters&lt;never&gt;;   
+                    //type T5 = never
+                </code>
+            </ul>
+        </section>
+        <section class="main-section" id="Mais_tipos">
+            <header>Mais Tipos</header>
+
+            <ul>
+                <li>OmitThisParameter&lt;Type&gt;</li>
+                <p>Remove o parâmetro this de Type. Se Type não tem parâmetro this explicitamente declarado, o resultado é simplesmente Type. Caso contrário, um novo tipo função sem o parâmetro this é criado a partir de Type. Generics são apagados e apenas a ultima assinatura sobrecarregada é propagada para o novo tipo função.<br><span>Exemplo: </span></p>
+                <code>
+                    function paraHex(this: Number) {
+                        return this.toString(16);
+                      }
+                
+                      const cincoParaHex: OmitThisParameter&lt;typeof paraHex&gt; = paraHex.bind(5);
+                
+                      console.log(cincoParaHex());
+                </code>
+            </ul>
+        </section>
+        <section class="main-section" id="Outros_tipos">
+            <header>Outros tipos</header>
+            <ul>
+                <li>ConstructorParameters</li>
+                <p>Constrói um tipo tupla ou array a partir dos tipos de um tipo função construtora. Isso gera um tipo tupla com todos os tipos parâmetros (ou o tipo never se Type não for uma função).</p>
+                <li>ReturnType</li>
+                <p>Constrói um tipo consistindo do tipo retorno da função Type.</p>
+                <li>InstanceType</li>
+                <p>Constrói um tipo consistindo do tipo instancia de uma função construtora em Type.</p>
+                <li>Required</li>
+                <p>Constrói um tipo consistindo de todas propriedades de T definidas como obrigatórias. O oposto de Partial.</p>
+                <li>ThisParameterType</li>
+                <p>Extrai o tipo do parâmetro this para um tipo function, ou unknown se o tipo da função não tem o parâmetro this.</p>
+                <li>ThisType</li>
+                <p>Esse utilitário não retorna um tipo transformado. Ao invés, serve como um marcador para um tipo contextual this. Note que a flag --noImplicitThis precisa ser ativada para usar esse utilitário.</p>
+
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

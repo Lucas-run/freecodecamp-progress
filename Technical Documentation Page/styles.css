@@ -1,0 +1,107 @@
+/*Reset CSS*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default anchor decoration */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/************************************/
+/***************Fim do reset*********/
+/*************************************/
+
+html,
+body{
+    min-width: 290px;
+    background-color: #fAfAfA;
+    font-family: Georgia, Arial, sans-serif;
+    line-height: 1.5;
+    color: #4d4f53;
+    margin-top: .5rem;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30vw;
+    min-width: 290px;
+    padding: .625rem;
+    border-right: 2px solid #4d4f53;
+}
+
+#navbar ul{
+    height: 90vh;
+    margin-top: .75rem;
+    padding: .25rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#navbar ul li {
+    border-top: 1px solid;
+    padding: .625rem 2rem;
+    position: relative;
+}
+
+#main-doc {
+    position: absolute;
+    padding: 1.25rem;
+    margin-left: 31vw;
+}
+
+
+header {
+    color: #000;
+    font-size: 1.8rem;
+    margin: .625rem;
+    text-align: center;
+}
+
+@media (max-width: 900px){
+    #navbar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-height: 25vh;
+        width: 100vw;
+        z-index: 1;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    #main-doc{
+        position: relative;
+        margin-top: 35vh;
+        margin-left: 0;
+    }
+}
