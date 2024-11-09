@@ -3,30 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav id="navbar" class="navbar">
+            <!-- botão de navegação para mobile-->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-button">&#9776;</label>
             <!-- A barra de navegação deve estar sempre no topo da janela de visualização -->
-            <ul>
-                <li><a href="" class="nav-link"></a></li>
-                <li><a href="" class="nav-link"></a></li>
-                <li><a href="" class="nav-link"></a></li>
+            <ul class="nav-menu">
+                <li><a href="#welcome-section" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="welcome-section" class="section">
-            <h1></h1>
-            <!-- A altura da seção de boas-vindas deve ser igual à altura da janela de visualização -->
+        <section id="welcome-section" class="welcome-section section">
+            <h1>Hi, I'm Lucas</h1>
+            <p>I'm a web developer</p>
         </section>
-        <section id="projects" class="section">
+        <section id="projects" class="projects-section section">
+            <h2 class="header-projects-section">Some of my projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <a href="" target="_blank">
+                        <img src="https://i.ibb.co/K71V1XJ/Captura-de-tela-2024-11-04-233114.png" alt="" class="project-image">
+                        <p class="project-tile">Tribute Page</p>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="" target="_blank">
+                        <img src="https://i.ibb.co/n089nMQ/Captura-de-tela-2024-11-07-112748.png" alt="" class="project-image">
+                        <p class="project-tile">Generic Landing Page</p>
+                    </a>
+                </div>
+                <!-- <div class="project">
+                    <a href="" target="_blank">
+                        <img src="https://i.ibb.co/K71V1XJ/Captura-de-tela-2024-11-04-233114.png" alt="" class="project-image">
+                        <p class="project-tile"></p>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="" target="_blank">
+                        <img src="https://i.ibb.co/K71V1XJ/Captura-de-tela-2024-11-04-233114.png" alt="" class="project-image">
+                        <p class="project-tile"></p>
+                    </a>
+                </div> -->
+            </div>
             <!-- pelo menos um elemento com uma classe de project-tile para conter um projeto -->
         </section>
-        <section id="contact" class="section">
-            <!-- deve ter um link com um id de profile-link, que abre seu perfil do GitHub ou freeCodeCamp em uma nova aba -->
+        <section id="contact" class="contact section">
+            <h2 class="contact-header">Let's work together</h2>
+            <div class="icons-container">
+                <div class="icon">
+                    <a id="profile-link" href="https://x.com/devlucas_rc" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div class="icon">
+                    <a id="profile-link" href="https://github.com/Lucas-run" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="icon">
+                    <a id="profile-link" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
         </section>
     </main>
     <footer></footer>
