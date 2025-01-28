@@ -7,19 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <!-- só a logo -->
-        </div>
-    </header>
     <main>
-        <h1>É um Palíndromo?</h1>
+        <section>
+            <div class="container">
+                <!-- só a logo -->
+                <h1>É um Palíndromo?</h1>
+            </div>
+        </section>
         <!-- aqui a caixa para testar se é um palíndromo -->
          <section>
-            <!-- aqui uma caixa de texto explicando ao usuário o que é um palíndromo -->
+            <div class="container box-1">
+                <div class="div-check">
+                    <input type="text" id="text-input" class="input-text">
+                    <button id="check-btn" class="palindromo-btn">Check</button>
+                </div>
+                <span id="result"></span>
+            </div>
+         </section>
+         <!-- aqui uma caixa de texto explicando ao usuário o que é um palíndromo -->
+         <section>
+            <div class="container box-2">
+                <p>Um palíndromo é uma palavra ou frase que é escrita da mesma forma, de trás para frente, ignorando pontuação, maiúsculas e minúsculas e espaçamento.</p>
+            </div>
          </section>
     </main>
     <!-- <footer></footer> -->
-
+    <script src="script.js"></script>
 </body>
 </html>

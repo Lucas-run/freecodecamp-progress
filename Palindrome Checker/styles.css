@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    /* overflow-y: hidden; */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    max-width: 30%;
+    margin: 2rem auto;
+
+}
+
+h1{ 
+    margin: 6rem 0 2rem 0;
+}
+
+.box-1 {
+    border-radius: 20px;
+    box-shadow: 0 6px 6px #182ed4;
+    padding: 3rem 0;
+    background-color: #f0f0f0;
+}
+
+.box-2 {
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: rgba(192, 16, 74, 0.3);
+    text-align: justify;
+}
+
+.input-text {
+    height: 2rem;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #182ed4;
+    background-color: #f0f0f0;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.palindromo-btn {
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #182ed4;
+    cursor: pointer;
+    color: #f0f0f0;
+}
+
+.palindromo-btn:hover{
+    border: 1px solid black;
+}
+
+@media (max-width: 1080px) {
+    body {
+        font-size: 0.825rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .input-text{
+        width: 50%;
+        font-size: .825rem;
+    }
+    .div-check{
+        display: flex;
+        justify-content:space-around ;
+    }
+}
